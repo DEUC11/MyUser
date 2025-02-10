@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/cart.css">
+    <script src="javascript/cart.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="KINGS.png" alt="Logo">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Your Shopping Cart</h1>
+        <div class="cart-container">
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Cart items will be dynamically inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <div class="cart-summary">
+            <h2>Cart Total: <span id="cart-total">$0.00</span></h2>
+            <button>Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 KING'S THRIFT. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Call displayCart to load the cart when the cart page is opened
+        displayCart();
+    </script>
+</body>
+</html>

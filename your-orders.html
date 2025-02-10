@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Orders</title>
+    <link rel="stylesheet" href="css/Orders.css">
+    <script src="javascript/orders.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="KINGS.png" alt="Logo">
+            </a>
+        </div>
+        <div class="header-center">
+            <div class="search-container">
+                <input type="text" placeholder="Search...">
+                <button class="search-btn">
+                    <img src="search-icon.png" alt="Search Icon">
+                </button>
+            </div>
+            <div class="header-right"></div>
+            <nav class="account-nav">
+                <!-- Label is linked to checkbox with ID 'login-toggle' -->
+                <label for="login-toggle" class="account-label">Account & Orders</label>
+                <ul class="dropdown-menu">
+                    <li><a href="your-orders.html">Your Orders</a></li>
+                    <li><a href="your-reviews.html">Your Reviews</a></li>
+                    <li><a href="your-profile.html">Your Profile</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                    <li><a href="index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="order-tabs">
+            <button class="order-tab active" onclick="filterOrders('all')">All Orders</button>
+            <button class="order-tab" onclick="filterOrders('processing')">Processing</button>
+            <button class="order-tab" onclick="filterOrders('shipped')">Shipped</button>
+            <button class="order-tab" onclick="filterOrders('delivered')">Delivered</button>
+            <button class="order-tab" onclick="filterOrders('returns')">Returns</button>
+        </div>
+
+        <!-- Orders List -->
+        <div class="order-list" id="order-list">
+            <!-- Example Order -->
+            <div class="order-item" data-status="shipped">
+                <div class="order-details">
+                    <p>Order #12345</p>
+                    <p>Status: Shipped</p>
+                </div>
+                <button class="view-order">View Order</button>
+            </div>
+            <!-- More order items go here -->
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 KING'S THRIFT. All rights reserved.</p>
+    </footer>
+</body>
+</html>

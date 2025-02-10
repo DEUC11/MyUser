@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Reviews</title>
+    <link rel="stylesheet" href="css/Reviews.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="KINGS.png" alt="Logo">
+            </a>
+        </div>
+        <div class="header-center">
+            <div class="search-container">
+                <input type="text" placeholder="Search...">
+                <button class="search-btn">
+                    <img src="search-icon.png" alt="Search Icon">
+                </button>
+            </div>
+            <div class="header-right"></div>
+            <nav class="account-nav">
+                <label for="login-toggle" class="account-label">Account & Orders</label>
+                <ul class="dropdown-menu">
+                    <li><a href="your-orders.html">Your Orders</a></li>
+                    <li><a href="your-reviews.html">Your Reviews</a></li>
+                    <li><a href="your-profile.html">Your Profile</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                    <li><a href="index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="review-item">
+                <div class="review-header">
+                    <h3 class="product-title">Product Name</h3>
+                    <p class="product-description"></p>
+                </div>
+
+                <!-- Rating System -->
+                <div class="rating">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <p class="rating-text">Your rating: <span id="rating-display">Not rated</span></p>
+
+                <!-- Review Comment -->
+                <textarea id="review-comment" placeholder="Write your review here..." rows="5"></textarea>
+                <br>
+                <button class="submit-btn" onclick="submitReview()">Submit Review</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 KING'S THRIFT. All rights reserved.</p>
+    </footer>
+
+    <script src="javascript/Reviews.js"></script>
+</body>
+</html>

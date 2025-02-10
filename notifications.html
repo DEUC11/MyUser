@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="css/Notifications.css">
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="KINGS.png" alt="Logo">
+            </a>
+        </div>
+        <div class="header-center">
+            <div class="search-container">
+                <input type="text" placeholder="Search...">
+                <button class="search-btn">
+                    <img src="search-icon.png" alt="Search Icon">
+                </button>
+            </div>
+            <div class="header-right"></div>
+            <nav class="account-nav">
+                <label for="login-toggle" class="account-label">Account & Orders</label>
+                <ul class="dropdown-menu">
+                    <li><a href="your-orders.html">Your Orders</a></li>
+                    <li><a href="your-reviews.html">Your Reviews</a></li>
+                    <li><a href="your-profile.html">Your Profile</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                    <li><a href="index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Notifications Section -->
+    <div class="notifications-container">
+        <h1>Notifications</h1>
+
+        <!-- General Notifications -->
+        <div class="notification-category">
+            <div class="notification-item">
+                <img src="social-icon.png" alt="Social Icon">
+                <div class="notification-content">
+                    <h2>Social Highlights</h2>
+                    <p></p>
+                </div>
+                <span class="arrow">›</span>
+            </div>
+
+            <div class="notification-item">
+                <img src="update-icon.png" alt="Update Icon">
+                <div class="notification-content">
+                    <h2>King’s Updates</h2>
+                    <p></p>
+                </div>
+                <span class="arrow">›</span>
+            </div>
+        </div>
+
+        <!-- Order Updates -->
+        <div class="notification-header">
+            <h2>Order Updates</h2>
+            <a href="#">Read All (0)</a>
+        </div>
+
+        <div class="notification-item highlighted">
+            <img src="package-icon.png" alt="Parcel Icon">
+            <div class="notification-content">
+                <h2>Parcel Delivered</h2>
+                <p></p>
+            </div>
+            <span class="arrow">›</span>
+        </div>
+    </div>
+
+    <!-- Footer (outside notifications-container) -->
+    <footer>
+        <p>&copy; 2025 KING'S THRIFT. All rights reserved.</p>
+    </footer>
+</body>
