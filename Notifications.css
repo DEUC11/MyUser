@@ -1,0 +1,352 @@
+/* Global Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    color: #fff;
+    height: 100%;
+}
+
+/* Header */
+header {
+    background-image: url('blue-background.png'); 
+    background-size: cover;
+    background-position: center; 
+    color: white;
+    height: 80px; /* Adjust height to make it smaller */
+    display: flex; /* Align items inside the header */
+    align-items: center; /* Vertically center the content */
+    padding: 0 20px
+}
+
+.logo img {
+    height: 50px;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color:white;
+    padding: 8px 15px;
+    border-radius: 30px;
+    width: 50%; /* Adjust width as needed */
+    max-width: 450px;
+    position: relative; /* For positioning the icon inside */
+}
+
+.search-container input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: black;
+    font-size: 16px;
+    padding: 10px 40px 10px 15px;
+}
+
+.search-container .search-btn {
+    position: absolute;
+    right: 15px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container .search-btn img {
+    height: 20px;
+    width: 20px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Add space between the search bar and the "Account & Orders" section */
+    gap: 20px; /* Space between elements inside the header-right */
+}
+
+/* Account Navigation */
+.account-nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.account-label {
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff; /* White text */
+    font-size: 16px; /* Readable size */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth hover effect */
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 70%; /* Aligns the menu directly below the label */
+    left: 0; /* Aligns the menu to the left of the container */
+    background-color:rgb(42, 118, 204);
+    min-width: 160px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 0px;
+}
+
+.dropdown-menu li {
+    padding: 8px 16px;
+    text-align: left;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+}
+
+.dropdown-menu li:hover {
+    background-color: #043c61;
+}
+
+.account-nav:hover .dropdown-menu {
+    display: block;
+}
+
+/* Notifications Container */
+.notifications-container {
+    width: 70%;
+    max-width: 1500px; 
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+/* Header */
+h1 {
+    text-align: center;
+    color: #2980b9;
+    font-size: 22px;
+}
+
+/* Notification List */
+.notification-category {
+    background: #fff;
+    border-radius: 8px;
+}
+
+/* Notification Item */
+.notification-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.notification-item:hover {
+    background: #f0f5ff;
+}
+
+.notification-item img {
+    width: 45px;
+    height: 45px;
+    margin-right: 15px;
+}
+
+.notification-content h2 {
+    font-size: 16px;
+    margin: 0;
+    color: #333;
+}
+
+.notification-content p {
+    font-size: 14px;
+    margin: 5px 0 0;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Right Arrow */
+.arrow {
+    margin-left: auto;
+    font-size: 22px;
+    color: #777;
+}
+
+/* Order Updates */
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2980b9;
+}
+
+.notification-header a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+}
+
+.notification-header a:hover {
+    text-decoration: underline;
+}
+
+/* Highlighted Notification */
+.highlighted {
+    background: #e8f0ff;
+    border-radius: 8px;
+}
+
+
+/* 📱 Mobile Responsiveness (Screens 768px and below) */
+@media (max-width: 768px) {
+    header {
+        height: 70px;
+        flex-direction: row;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: none; /* Hide logo on mobile/tablet screens */
+    }
+
+    .header-center {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        margin-top: 0;
+    }
+
+    .search-container {
+        width: 70%; /* Smaller search bar */
+    }
+
+    .search-container input {
+        padding: 8px;
+    }
+
+    .account-label {
+        cursor: touch;
+        font-weight: bold;
+        color: #fff; /* White text */
+        font-size: 16px; /* Readable size */
+        text-decoration: none; /* Remove underline */
+        transition: color 0.3s; /* Smooth hover effect */
+    }
+    
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 70%; /* Aligns the menu directly below the label */
+        left: 0; /* Aligns the menu to the left of the container */
+        background-color:rgb(42, 118, 204);
+        min-width: 160px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        list-style: none;
+        padding: 10px 0;
+        margin: 0;
+        border-radius: 0px;
+    }
+    
+    .dropdown-menu li {
+        padding: 8px 16px;
+        text-align: left;
+    }
+    
+    .dropdown-menu li a {
+        text-decoration: none;
+        color: #ffffff;
+        display: block;
+    }
+    
+    .dropdown-menu li:hover {
+        background-color: #043c61;
+    }
+
+    .notifications-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .notification-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
+    }
+
+    .notification-actions {
+        margin-top: 10px;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .notification-actions button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* 📱 Ultra-Mobile Screens (Below 480px) */
+@media (max-width: 480px) {
+    .search-container {
+        width: 95%;
+    }
+
+    .notifications-container h1 {
+        font-size: 18px;
+    }
+
+    .notification-item img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .notification-content h2 {
+        font-size: 14px;
+    }
+
+    .notification-content p {
+        font-size: 12px;
+    }
+
+    .arrow {
+        font-size: 18px;
+    }
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: #0d5191;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
