@@ -6,17 +6,23 @@ body, html {
     box-sizing: border-box;
     color: #fff;
     height: 100%;
+    background-color: #f4f4f4; /* Set background color for the body */
 }
 
+/* Header */
 header {
-    background-image: url('blue-background.png'); 
+    background-image: url('blue-background.png');
     background-size: cover;
-    background-position: center; 
+    background-position: center;
     color: white;
-    height: 80px; /* Adjust height to make it smaller */
-    display: flex; /* Align items inside the header */
-    align-items: center; /* Vertically center the content */
-    padding: 0 20px
+    height: 80px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    width: 100%;
+    position: fixed;
+    z-index: 1000; /* Ensure header is on top of other elements */
 }
 
 .logo img {
@@ -33,12 +39,13 @@ header {
 .search-container {
     display: flex;
     align-items: center;
-    background-color:white;
+    background-color: white;
     padding: 8px 15px;
     border-radius: 30px;
-    width: 50%; /* Adjust width as needed */
+    width: 50%;
     max-width: 450px;
-    position: relative; /* For positioning the icon inside */
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
 
 .search-container input {
@@ -48,12 +55,12 @@ header {
     outline: none;
     color: black;
     font-size: 16px;
-    padding: 10px 40px 10px 15px; /* Extra padding to make space for the icon */
+    padding: 10px 40px 10px 15px;
 }
 
 .search-container .search-btn {
     position: absolute;
-    right: 15px; /* Position icon to the right inside the bar */
+    right: 15px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -64,6 +71,7 @@ header {
     width: 20px;
 }
 
+/* Account Dropdown */
 .header-right {
     display: flex;
     align-items: center;
@@ -146,7 +154,7 @@ header {
     color: #1a567e; /* Match hover effect */
 }
 
-/* Reviews Section */
+/* Review Section */
 .reviews-section {
     display: flex;
     justify-content: center;
@@ -156,11 +164,11 @@ header {
 }
 
 .container {
-    background: #f5f5f5;
+    background: #fff;
     padding: 20px;
     border-radius: 8px;
     width: 60%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance box shadow */
 }
 
 .review-item {
@@ -195,7 +203,7 @@ header {
 .rating-text {
     font-size: 16px;
     margin-top: 10px;
-    color: rgb(36, 34, 34);;
+    color: rgb(36, 34, 34);
 }
 
 /* Review Text Area */
@@ -204,10 +212,11 @@ header {
     padding: 10px;
     border: 1px solid #ffffff;
     border-radius: 5px;
-    background: #ffffff;
+    background: #fff;
     color: #070707;
     font-size: 14px;
     margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
 
 #review-comment::placeholder {
@@ -216,12 +225,12 @@ header {
 
 .star {
     font-size: 30px;
-    color: #ccc; /* default color for stars */
+    color: #ccc;
     cursor: pointer;
 }
 
 .star.highlight {
-    color: #f4c150; /* gold color for highlighted stars */
+    color: #f4c150;
 }
 
 .submit-btn:disabled {
@@ -234,12 +243,13 @@ header {
     background-color: #2980B9;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 12px;
     margin-top: 10px;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 .submit-btn:hover {
@@ -252,63 +262,15 @@ header {
         height: 60px;
         padding: 8px;
         flex-direction: row;
-        justify-content: center; /* Center the elements for mobile */
+        justify-content: center;
     }
 
     .logo {
-        display: none; /* Hide logo on mobile devices */
-    }
-
-    .header-center {
-        display: flex;
-        justify-content: center;
-        flex: 1;
-    }
-    .account-label {
-        cursor: touch;
-        font-weight: bold;
-        color: #fff; /* White text */
-        font-size: 16px; /* Readable size */
-        text-decoration: none; /* Remove underline */
-        transition: color 0.3s; /* Smooth hover effect */
-    }
-    
-    .dropdown-menu {
         display: none;
-        position: absolute;
-        top: 70%; /* Aligns the menu directly below the label */
-        left: 0; /* Aligns the menu to the left of the container */
-        background-color:rgb(42, 118, 204);
-        min-width: 160px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        list-style: none;
-        padding: 10px 0;
-        margin: 0;
-        border-radius: 0px;
-    }
-    
-    .dropdown-menu li {
-        padding: 8px 16px;
-        text-align: left;
-    }
-    
-    .dropdown-menu li a {
-        text-decoration: none;
-        color: #ffffff;
-        display: block;
-    }
-    
-    .dropdown-menu li:hover {
-        background-color: #043c61;
-    }
-    
-    .account-nav:hover .dropdown-menu {
-        display: block;
     }
 
     .search-container {
-        width: 60%; /* Even smaller search bar */
+        width: 60%;
     }
 
     .container {
@@ -328,18 +290,13 @@ header {
     }
 
     .rating-text {
-        font-size: 14px; /* Adjust font size for mobile devices */
-    }
-
-    #rating-display {
-        font-size: 14px; /* Make the "Not rated" text smaller */
+        font-size: 14px;
     }
 
     #review-comment {
-        width: 80%; /* Reduce the width of the textarea */
-        font-size: 14px; /* Smaller font size for mobile devices */
-        padding: 8px; /* Reduce padding for a more compact textarea */
-        margin-top: 10px; /* Adjust margin if needed */
+        width: 80%;
+        font-size: 14px;
+        padding: 8px;
     }
 
     footer {
@@ -352,63 +309,19 @@ header {
         height: 60px;
         padding: 8px;
         flex-direction: row;
-        justify-content: center; /* Center the elements for mobile */
+        justify-content: center;
     }
 
     .logo {
-        display: none; /* Hide logo on mobile devices */
-    }
-
-    .header-center {
-        display: flex;
-        justify-content: center;
-        flex: 1;
-    }
-    .account-label {
-        cursor: touch;
-        font-weight: bold;
-        color: #fff; /* White text */
-        font-size: 16px; /* Readable size */
-        text-decoration: none; /* Remove underline */
-        transition: color 0.3s; /* Smooth hover effect */
-    }
-    
-    .dropdown-menu {
         display: none;
-        position: absolute;
-        top: 70%; /* Aligns the menu directly below the label */
-        left: 0; /* Aligns the menu to the left of the container */
-        background-color:rgb(42, 118, 204);
-        min-width: 160px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        list-style: none;
-        padding: 10px 0;
-        margin: 0;
-        border-radius: 0px;
-    }
-    
-    .dropdown-menu li {
-        padding: 8px 16px;
-        text-align: left;
-    }
-    
-    .dropdown-menu li a {
-        text-decoration: none;
-        color: #ffffff;
-        display: block;
-    }
-    
-    .dropdown-menu li:hover {
-        background-color: #043c61;
-    }
-    
-    .account-nav:hover .dropdown-menu {
-        display: block;
     }
 
     .search-container {
-        width: 60%; /* Even smaller search bar */
+        width: 60%;
+    }
+
+    .dropdown-menu {
+        left: -50px;
     }
 
     .container {
@@ -424,18 +337,17 @@ header {
     }
 
     .rating-text {
-        font-size: 12px; /* Make the font even smaller for very small screens */
+        font-size: 12px;
     }
 
     #rating-display {
-        font-size: 12px; /* Adjust size of the "Not rated" text */
+        font-size: 12px;
     }
 
     #review-comment {
-        width: 90%; /* Make the textarea even smaller for very small screens */
-        font-size: 12px; /* Smaller font size */
-        padding: 6px; /* Further reduce padding */
-        margin-top: 10px;
+        width: 90%;
+        font-size: 12px;
+        padding: 6px;
     }
 }
 
@@ -444,14 +356,14 @@ footer {
     background-color: #0d5191;
     text-align: center;
     padding: 10px;
-    width: 100%;
     color: white;
-    font-size: 14px;
-    position: absolute;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
 }

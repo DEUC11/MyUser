@@ -6,22 +6,30 @@ body, html {
     box-sizing: border-box;
     color: #fff;
     height: 100%;
+    background-color: #f4f4f4; /* Adding background to the body */
 }
 
 main {
     flex: 1;
     padding-bottom: 320px; /* Space above the footer */
+    overflow-y: auto; /* Allow scrolling */
 }
 
+/* Header */
 header {
     background-image: url('blue-background.png'); 
     background-size: cover;
     background-position: center; 
     color: white;
-    height: 80px; /* Adjust height to make it smaller */
-    display: flex; /* Align items inside the header */
-    align-items: center; /* Vertically center the content */
-    padding: 0 20px
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo img {
@@ -38,12 +46,12 @@ header {
 .search-container {
     display: flex;
     align-items: center;
-    background-color:white;
+    background-color: white;
     padding: 8px 15px;
     border-radius: 30px;
-    width: 50%; /* Adjust width as needed */
+    width: 50%;
     max-width: 450px;
-    position: relative; /* For positioning the icon inside */
+    position: relative;
 }
 
 .search-container input {
@@ -53,12 +61,12 @@ header {
     outline: none;
     color: black;
     font-size: 16px;
-    padding: 10px 40px 10px 15px; /* Extra padding to make space for the icon */
+    padding: 10px 40px 10px 15px;
 }
 
 .search-container .search-btn {
     position: absolute;
-    right: 15px; /* Position icon to the right inside the bar */
+    right: 15px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -72,32 +80,31 @@ header {
 .header-right {
     display: flex;
     align-items: center;
-    margin-left: 20px; /* Add space between the search bar and the "Account & Orders" section */
-    gap: 20px; /* Space between elements inside the header-right */
+    margin-left: 20px;
+    gap: 20px;
 }
 
 .account-nav {
     position: relative;
-    display:flex;
-    align-items: center; /* Ensures the dropdown is relative to this container */
+    display: flex;
+    align-items: center;
 }
 
 .account-label {
     cursor: pointer;
     font-weight: bold;
-    color: #fff; /* White text */
-    font-size: 16px; /* Readable size */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s; /* Smooth hover effect */
-
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 70%; /* Aligns the menu directly below the label */
-    left: 0; /* Aligns the menu to the left of the container */
-    background-color:rgb(42, 118, 204);
+    top: 70%;
+    left: 0;
+    background-color: rgb(42, 118, 204);
     min-width: 160px;
     z-index: 1;
     list-style: none;
@@ -125,7 +132,6 @@ header {
     display: block;
 }
 
-/* Optional: Add animation to dropdown */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -142,19 +148,21 @@ header {
 }
 
 .account-label:hover {
-    color: #2980B9; /* Highlight on hover */
+    color: #2980B9;
 }
 
 .account-label:focus {
-    outline: none; /* Remove focus outline */
-    color: #1a567e; /* Match hover effect */
+    outline: none;
+    color: #1a567e;
 }
+
 /* Orders Section */
 .order-tabs {
     display: flex;
     justify-content: center;
     background-color: #f1f1f1;
     padding: 10px 0;
+    margin-top: 80px;
 }
 
 .order-tab {
@@ -227,7 +235,6 @@ header {
         flex: 1;
         display: flex;
         justify-content: center;
-        margin-top: 0;
     }
 
     .search-container {
@@ -243,30 +250,6 @@ header {
     .account-nav {
         display: flex;
         gap: 10px;
-    }
-
-    .account-label {
-        font-size: 16px;
-        color: white;
-        cursor: pointer;
-    }
-
-    .dropdown-menu {
-        position: absolute;
-        top: 55px;
-        left: 0;
-        background-color: rgb(42, 118, 204);
-        min-width: 180px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        list-style: none;
-        padding: 10px 0;
-        margin: 0;
-        border-radius: 4px;
-    }
-
-    .dropdown-menu li a {
-        font-size: 14px;
     }
 
     .product-display {
@@ -302,52 +285,8 @@ header {
         padding: 6px 10px;
     }
 
-    .search-container input {
-        font-size: 14px;
-    }
-
-    .account-label {
-        cursor: touch;
-        font-weight: bold;
-        color: #fff; /* White text */
-        font-size: 16px; /* Readable size */
-        text-decoration: none; /* Remove underline */
-        transition: color 0.3s; /* Smooth hover effect */
-    
-    }
-    
     .dropdown-menu {
-        display: none;
-        position: absolute;
-        top: 70%; /* Aligns the menu directly below the label */
-        left: 0; /* Aligns the menu to the left of the container */
-        background-color:rgb(42, 118, 204);
-        min-width: 160px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        list-style: none;
-        padding: 10px 0;
-        margin: 0;
-        border-radius: 0px;
-    }
-    
-    .dropdown-menu li {
-        padding: 8px 16px;
-        text-align: left;
-    }
-    
-    .dropdown-menu li a {
-        text-decoration: none;
-        color: #ffffff;
-        display: block;
-    }
-    
-    .dropdown-menu li:hover {
-        background-color: #043c61;
-    }
-    
-    .account-nav:hover .dropdown-menu {
-        display: block;
+        left: -50px;
     }
 
     .product-display {
@@ -376,20 +315,16 @@ header {
     }
 }
 
-
-/* Footer Styling */
+/* Footer */
 footer {
     background-color: #0d5191;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     width: 100%;
     color: white;
     font-size: 14px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
